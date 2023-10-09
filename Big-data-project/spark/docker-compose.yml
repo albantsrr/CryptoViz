@@ -1,0 +1,25 @@
+version: '3'
+services:
+  spark-master:
+    image: bitnami/spark:latest
+    ports:
+      - "8080:8080"
+      - "7077:7077"
+    environment:
+      - SPARK_MODE=master
+    volumes:
+      - ./spark-app:/app
+    command: /bin/bash -c "/opt/bitnami/spark/bin/spark-class org.apache.spark.deploy.master.Master --ip 0.0.0.0"
+
+  spark-worker:
+    image: bitnami/spark:latest
+    environment:
+      - SPARK_MODE=worker
+      - SPARK_MASTER_URL=spark-master:7077
+    volumes:
+      - ./spark-app:/app
+    command: /bin/bash -c "/opt/bitnami/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077"
+
+networks:
+  default:
+    name: spark-network

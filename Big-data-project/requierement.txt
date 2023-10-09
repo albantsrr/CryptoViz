@@ -1,0 +1,3 @@
+selenium
+kafka-python
+pyspark
