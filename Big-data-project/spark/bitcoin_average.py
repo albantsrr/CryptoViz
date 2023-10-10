@@ -7,10 +7,9 @@ from pyspark.sql.types import StructType, StructField, StringType, FloatType
 #.master("spark://0.0.0.0:7077") \
 spark = SparkSession.builder \
     .appName("BitcoinAverageStreamingKafka") \
+    .master("spark://0.0.0.0:7077") \
     .config("spark.jars.packages", "org.apache.spark:spark-sql-kafka-0-10_2.12:3.1.2") \
     .getOrCreate()
-
-#spark.sparkContext.setLogLevel("DEBUG")
 
 # Créez un schéma pour le désérialiseur JSON
 schema = StructType([StructField("key", StringType(), True), StructField("value", FloatType(), True)])
@@ -19,8 +18,9 @@ schema = StructType([StructField("key", StringType(), True), StructField("value"
 df = spark \
     .readStream \
     .format("kafka") \
-    .option("kafka.bootstrap.servers", "172.19.0.3:9092") \
+    .option("kafka.bootstrap.servers", "172.18.0.5:9092") \
     .option("subscribe", "bitcoin_topic") \
+    .option("startingOffsets", "earliest") \
     .load()
 
 df = df.selectExpr("CAST(key AS STRING)", "CAST(value AS STRING)")
@@ -29,16 +29,13 @@ df = df.selectExpr("CAST(key AS STRING)", "CAST(value AS STRING)")
 df = df.withColumn("value", df["value"].cast(FloatType()))
 
 # Calculez la moyenne du cours du Bitcoin en utilisant Spark SQL
-average_price = df.groupBy().avg("value")
+average_price = df.filter(df["key"] == "btc_key").groupBy().avg("value")
 
-print(average_price)
 # Affichez la moyenne en streaming (mode append)
 query = average_price.writeStream \
     .outputMode("complete") \
     .format("console") \
     .start()
-
-print(query)
 
 # Attendez la fin de l'application
 query.awaitTermination()
