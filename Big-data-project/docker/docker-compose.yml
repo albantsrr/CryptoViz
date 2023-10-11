@@ -66,3 +66,13 @@ services:
     networks:
       datapipeline:
         ipv4_address: 172.18.0.5
+
+  cassandra:
+    image: cassandra:latest
+    container_name: cassandra
+    hostname: cassandra
+    ports:
+      - "9042:9042"
+    networks:
+      datapipeline:
+        ipv4_address: 172.18.0.6

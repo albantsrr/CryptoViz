@@ -17,7 +17,8 @@ $ sudo apt install docker docker-compose (Si nécessaire)
 ### Kafka, Zookeeper, Spark & Spark Worker via docker-compose
 
 ```
- $ sudo docker-compose up -d
+ $ sudo docker-compose up -d (Démarre tout les containers).
+ $ sudo docker-compose up -d <NOM_SERVICE ex. cassandra> (Démarre uniquement cassandra).
 ```
 
 ## Création d'un topic Kafka pour produire et consommer la données
@@ -38,6 +39,22 @@ Connexion à un container docker :
 $ sudo docker exec -it <ID_CONTAINER OR NAME> /bin/bash
 ```
 
+## Commande utiles Docker & Docker-compose
+
+```
+$ docker-compose up -d (Démarre et éxécute le fichier docker-compose.yml pour installer vos services, network, ...). (-d = Sans détails Mode Silently)
+$ docker-compose stop (Stop simplement les services contenus dans un docker-compose.yml)
+$ docker-compose down (Stop et Supprime les containers des services contenus dans le docker-compose.yml).
+$ docker ps (Liste tout les containers dockers en cours d'éxécution).
+$ docker ps --all (Liste tout les containers dockers allumé ou stoppé).
+$ docker images (Liste toutes les images disponibles que vous avez pullez).
+$ docker rm <CONTAINER_ID> (Supprime un container (Doit être éteint))
+$ docker stop <CONTAINER_ID> (Stop un container actif pour sont ID).
+$ docker rmi <IMAGES_IDS / ID> (Supprime un images par son ID ou NAME).
+$ docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' <CONTAINER_ID> (Permet de récupérer IPV4 du container).
+$ docker network ls (Liste tout les networks virtuels disponible sur votre docker).
+```
+
 ## Architectue et structure réseaux
 
 ```
@@ -46,6 +63,14 @@ Container ZOOKEEPER (172.18.0.4) -> 2888/tcp, 0.0.0.0:2181->2181/tcp, :::2181->2
 Container Spark Master (172.18.0.2) -> 0.0.0.0:7077->7077/tcp, :::7077->7077/tcp, 0.0.0.0:8080->8080/tcp, :::8080->8080/tcp  (Accessible via port 8080 & adresse localhost).
 Container Spark Worker (172.18.0.3) -> Autobinding au Spark Master rien à faire. (Cluster). 
 ```
+
+
+## Exécution du script en mode proccess background (VIA NOHUP)
+
+```
+$ nohup python3 scrapper-crypto.py (> output.log 2>&1 &  (POur avoir le l'output)) 
+```
+
 
 ## Architecture et structure
 

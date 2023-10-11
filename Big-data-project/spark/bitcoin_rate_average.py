@@ -4,9 +4,8 @@ from pyspark.streaming import StreamingContext
 from pyspark.sql.functions import col, avg, from_json
 from pyspark.sql.types import StructType, StructField, StringType, FloatType
 
-#.master("spark://0.0.0.0:7077") \
 spark = SparkSession.builder \
-    .appName("BitcoinAverageStreamingKafka") \
+    .appName("BitcoinRateAverage") \
     .master("spark://0.0.0.0:7077") \
     .config("spark.jars.packages", "org.apache.spark:spark-sql-kafka-0-10_2.12:3.1.2") \
     .getOrCreate()
