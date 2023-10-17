@@ -1,2 +1,1 @@
-Problème de gestion du réseaux entre le container kafka et le contianer spark a traiter.
-Essayer de récréer chaque container en les associant au même réseaux (Spark-network) de dacon a ce qu'il puisse communiquer ensemble.
+

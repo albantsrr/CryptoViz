@@ -17,7 +17,7 @@ schema = StructType([StructField("key", StringType(), True), StructField("value"
 df = spark \
     .readStream \
     .format("kafka") \
-    .option("kafka.bootstrap.servers", "172.18.0.5:9092") \
+    .option("kafka.bootstrap.servers", "5.135.156.86:9092") \
     .option("subscribe", "bitcoin_topic") \
     .option("startingOffsets", "earliest") \
     .load()

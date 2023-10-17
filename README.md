@@ -55,6 +55,17 @@ $ docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' <C
 $ docker network ls (Liste tout les networks virtuels disponible sur votre docker).
 ```
 
+## Commande utile SPARK Streaming
+
+```
+$ spark-submit --master spark://hostname:7077 --executor-cores 4 --executor-memory 4g --node worker-1 application.py
+
+--master = Vers quel noeud master on souhaite éxécuter l'application.
+--executor-cores = Combien de Coeur CPU on souhaite utiliser pour le traitement.
+--executor-memory = Combien de mémoire vive (RAM) on souhaite utiliser pour le traitement.
+--node = Le noeud que l'ont souhaite utiliser pour le traitement.
+```
+
 ## Architectue et structure réseaux
 
 ```
