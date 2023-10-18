@@ -60,7 +60,11 @@ services:
       - zookeeper
     environment:
       KAFKA_ZOOKEEPER_CONNECT: "zookeeper:2181"
+<<<<<<< HEAD
       KAFKA_ADVERTISED_LISTENERS: "PLAINTEXT://172.18.0.5:9092"
+=======
+      KAFKA_ADVERTISED_LISTENERS: "PLAINTEXT://5.135.156.86:9092"
+>>>>>>> server/features/spark_streaming_kafka
       KAFKA_LISTENERS: "PLAINTEXT://0.0.0.0:9092"
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
     ports:

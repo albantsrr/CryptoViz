@@ -8,12 +8,20 @@ from selenium.common.exceptions import WebDriverException
 producer = KafkaProducer(bootstrap_servers='172.18.0.5:9092')
 
 chrome_options = webdriver.ChromeOptions()
+#chrome_options.binary_location = './chromedriver'
+chrome_options.add_argument('--no-sandbox')  # Disable sandbox mode
+#chrome_options.add_argument('--disable-dev-shm-usage')  # Disable /dev/shm usage
+
+# Set up the virtual display
+chrome_options.add_argument('--disable-gpu')
+chrome_options.add_argument(f'--display=:99')
+
 chrome_options.add_argument("--headless")
 chrome_options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36")
 chrome_options.add_argument('--window-size=1920,1080')
 chrome_options.add_experimental_option("detach", True)
 
-driver = webdriver.Chrome(executable_path='../drivers/chromedriver', options=chrome_options)
+driver = webdriver.Chrome(executable_path="./chromedriver", options=chrome_options)
 driver.get("https://www.etoro.com/fr/markets/btc")
 
 sleep(10)
