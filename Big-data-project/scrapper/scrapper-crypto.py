@@ -9,8 +9,8 @@ producer = KafkaProducer(bootstrap_servers='172.18.0.5:9092')
 
 chrome_options = webdriver.ChromeOptions()
 #chrome_options.binary_location = './chromedriver'
-chrome_options.add_argument('--no-sandbox')  # Disable sandbox mode
-#chrome_options.add_argument('--disable-dev-shm-usage')  # Disable /dev/shm usage
+chrome_options.add_argument('--no-sandbox') 
+#chrome_options.add_argument('--disable-dev-shm-usage')
 
 # Set up the virtual display
 chrome_options.add_argument('--disable-gpu')
@@ -34,7 +34,7 @@ if element:
             print(element.text)
             producer.send('bitcoin_topic', key="btc_key".encode("utf-8"), value=str(element.text).encode("utf-8"))
             producer.flush()
-            sleep(1)
+            sleep(30)
         except WebDriverException as e:
             print("Erreur WebDriverException : ", e)
             print("Le fenêtre a crash, tentative de réexecution en cours ...")
