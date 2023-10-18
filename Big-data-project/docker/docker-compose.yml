@@ -25,20 +25,6 @@ services:
       datapipeline:
         ipv4_address: 172.18.0.2
 
-  ## ACTUELLEMENT PAS UTILE CAR PAS LOCALHOST
-  # spark-worker:
-  #   image: bitnami/spark:latest
-  #   container_name: spark-worker
-  #   hostname: spark-worker
-  #   environment:
-  #     - SPARK_MODE=worker
-  #     - SPARK_MASTER_URL=spark-master:7077
-  #   volumes:
-  #     - ./spark-app:/app
-  #   command: /bin/bash -c "/opt/bitnami/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077"
-  #   networks:
-  #     datapipeline:
-  #       ipv4_address: 172.18.0.3
 
   zookeeper:
     image: confluentinc/cp-zookeeper:latest
@@ -60,11 +46,7 @@ services:
       - zookeeper
     environment:
       KAFKA_ZOOKEEPER_CONNECT: "zookeeper:2181"
-<<<<<<< HEAD
-      KAFKA_ADVERTISED_LISTENERS: "PLAINTEXT://172.18.0.5:9092"
-=======
       KAFKA_ADVERTISED_LISTENERS: "PLAINTEXT://5.135.156.86:9092"
->>>>>>> server/features/spark_streaming_kafka
       KAFKA_LISTENERS: "PLAINTEXT://0.0.0.0:9092"
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
     ports:
