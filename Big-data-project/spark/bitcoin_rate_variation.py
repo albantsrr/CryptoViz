@@ -8,7 +8,7 @@ from pyspark.sql import functions as F
 
 spark = SparkSession.builder \
     .appName("BitcoinRateVariation") \
-    .master("spark://5.135.156.86:7077") \
+    .master("spark://0.0.0.0:7077") \
     .config("spark.jars.packages", "org.apache.spark:spark-sql-kafka-0-10_2.12:3.1.2") \
     .getOrCreate()
 
@@ -31,7 +31,7 @@ df = df.withColumn("timestamp", df["timestamp"].cast(TimestampType()))
 df = df.withColumn("timestamp", unix_timestamp(df["timestamp"], "yyyy-MM-dd HH:mm:ss.SSS").cast("timestamp"))
 
 # Agrégation des données sur 24 heures / 1 minutes / 2 heures / ...
-aggregated_df = df.groupBy("key", F.window("timestamp", "12 hours", "12 hours")).agg(
+aggregated_df = df.groupBy("key", F.window("timestamp", "24 hours", "24 hours")).agg(
     F.first("value").alias("start_value"),
     F.last("value").alias("latest_value")
 )
