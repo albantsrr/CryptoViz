@@ -8,7 +8,7 @@ from pyspark.sql import functions as F
 
 spark = SparkSession.builder \
     .appName("BitcoinRateVariation") \
-    .master("spark://0.0.0.0:7077") \
+    .master("spark://86.201.248.56:7077") \
     .config("spark.jars.packages", "org.apache.spark:spark-sql-kafka-0-10_2.12:3.1.2") \
     .getOrCreate()
 
@@ -17,7 +17,7 @@ schema = StructType([StructField("key", StringType(), True), StructField("value"
 df = spark \
     .readStream \
     .format("kafka") \
-    .option("kafka.bootstrap.servers", "172.18.0.5:9092") \
+    .option("kafka.bootstrap.servers", "5.135.156.86:9092") \
     .option("subscribe", "bitcoin_topic") \
     .option("startingOffsets", "earliest") \
     .load()
@@ -31,7 +31,7 @@ df = df.withColumn("timestamp", df["timestamp"].cast(TimestampType()))
 df = df.withColumn("timestamp", unix_timestamp(df["timestamp"], "yyyy-MM-dd HH:mm:ss.SSS").cast("timestamp"))
 
 # Agrégation des données sur 24 heures / 1 minutes / 2 heures / ...
-aggregated_df = df.groupBy("key", F.window("timestamp", "12 hours", "12 hours")).agg(
+aggregated_df = df.groupBy("key", F.window("timestamp", "2 minutes", "2 minutes")).agg(
     F.first("value").alias("start_value"),
     F.last("value").alias("latest_value")
 )
