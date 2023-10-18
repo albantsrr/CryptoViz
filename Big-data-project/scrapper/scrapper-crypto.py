@@ -21,7 +21,7 @@ chrome_options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64
 chrome_options.add_argument('--window-size=1920,1080')
 chrome_options.add_experimental_option("detach", True)
 
-driver = webdriver.Chrome(executable_path="./chromedriver", options=chrome_options)
+driver = webdriver.Chrome(executable_path="../drivers/chromedriver", options=chrome_options)
 driver.get("https://www.etoro.com/fr/markets/btc")
 
 sleep(10)
