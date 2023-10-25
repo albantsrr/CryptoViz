@@ -5,7 +5,7 @@ from pyspark.sql import functions as F
 
 spark = SparkSession.builder \
     .appName("BitcoinRateStats") \
-    .master("spark://86.201.248.56:7077") \
+    .master("spark://0.0.0.0:7077") \
     .config("spark.jars.packages", "org.apache.spark:spark-sql-kafka-0-10_2.12:3.1.2,com.datastax.spark:spark-cassandra-connector_2.12:3.4.1") \
     .getOrCreate()
 
