@@ -74,6 +74,7 @@ def is_changed_day(current_batch_df, previous_batch_df):
     return True 
 
 def process_batch_zero(batch_df):
+    # TODO: Réecrire l'objectif de la fonctionnalité 
     # Logique pour traiter le batch 0 
     # Si plusieur ligne, je filtre la ligne qui correspond a la tranche 24h du jour actuelle
     # Puis j'insére la données dans (bitcoin_stats_history)
@@ -101,7 +102,8 @@ def process_batch(batch_df, batch_id):
     else:
         
         bitcoin_stats_refreshed = batch_df.select("win_date_start", "win_date_end", "start_value", "latest_value", "calculation_time", "difference_rate", "variation_rate")
-        #bitcoin_latest_stats_offset_treated = batch_df.select("timestamp","offset")
+        
+        # TODO : GESTION DU TRAITEMENT DE VERIFICATION SI JOUR HAS BEEN PASS 
         
         #is_changed_day(bitcoin_stats_refreshed, PREVIOUS_BATCH_DF)
 
@@ -115,6 +117,10 @@ def process_batch(batch_df, batch_id):
             .option("spark.cassandra.connection.port", "9042") \
             .options(table="bitcoin_stats_refreshed", keyspace="bitcoin_data") \
             .save()
+        
+        ## TODO : PAS FORCEMENT BESOIN POUR L'INSTANT AUTOTRAITEMENT DES ENREGISTREMENT DEJA FAIT A VOIR PLUS TARD
+        
+        #bitcoin_latest_stats_offset_treated = batch_df.select("timestamp","offset")
         
         # bitcoin_latest_stats_offset_treated.write \
         #     .format("org.apache.spark.sql.cassandra") \
