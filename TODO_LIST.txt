@@ -1,1 +1,8 @@
+## ROUTE UTILES BACK-END
 
+```
+GET : Get all bitcoin data history
+GET : Get Bitcoin Stats data refreshed
+GET : Get Bitcoin stats data history
+GET : Get bitcoin stats over 1 week (STAND BY)
+```
