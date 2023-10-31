@@ -1,0 +1,23 @@
+version: '3'
+services:
+  spark-worker-1:
+    image: bitnami/spark:latest
+    container_name: spark-worker-phantom-1
+    hostname: spark-worker-phantom-1
+    environment:
+      - SPARK_MODE=worker
+      - SPARK_MASTER_URL=86.201.248.56:7077
+    volumes:
+      - ./spark-worker:/app
+    command: /bin/bash -c "/opt/bitnami/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://86.201.248.56:7077"
+  
+  spark-worker-2:
+    image: bitnami/spark:latest
+    container_name: spark-worker-phantom-2
+    hostname: spark-worker-phantom-2
+    environment:
+      - SPARK_MODE=worker
+      - SPARK_MASTER_URL=86.201.248.56:7077
+    volumes:
+      - ./spark-worker:/app
+    command: /bin/bash -c "/opt/bitnami/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://86.201.248.56:7077"
