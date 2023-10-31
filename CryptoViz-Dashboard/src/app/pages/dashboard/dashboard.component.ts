@@ -2,6 +2,7 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import * as am5 from '@amcharts/amcharts5';
 import am5themes_Animated from "@amcharts/amcharts5/themes/Animated";
 import * as am5xy from '@amcharts/amcharts5/xy';
+import { BitcoinServiceService } from 'src/app/services/bitcoin-service.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -12,8 +13,24 @@ export class DashboardComponent implements OnInit {
 
   @ViewChild('chartDom') chartDom: ElementRef;
   private root: am5.Root;
+
+  private data: any[] = [];
   
-  ngOnInit() {
+  constructor(private bitcoinService: BitcoinServiceService) {
+
+  }
+
+  async ngOnInit() {
+    this.data = await this.bitcoinService.get_all_bitcoin_data();
+    this.data = this.data.map((item: any) => {
+      let date = new Date(item.timestamp);
+      am5.time.add(date, "day", 1);
+      return {
+        price: item.price,
+        timestamp: date.getTime() // Convertir la chaîne en objet Date
+      };
+    });
+    console.log(this.data);
     let root = am5.Root.new("chartdiv");
     root.setThemes([
       am5themes_Animated.new(root)
@@ -37,26 +54,32 @@ export class DashboardComponent implements OnInit {
     
     
     // Generate random data
-    let date = new Date();
-    date.setHours(0, 0, 0, 0);
-    let value = 100;
+    // let date = this.data;
+    // date.setHours(0, 0, 0, 0);
+    // let value = 100;
     
-    function generateData() {
-      value = Math.round((Math.random() * 10 - 5) + value);
-      am5.time.add(date, "day", 1);
-      return {
-        date: date.getTime(),
-        value: value
-      };
-    }
+    // function generateData() {
+    //   // value = Math.round((Math.random() * 10 - 5) + value);
+    //   // am5.time.add(date, "day", 1);
+
+    //   this.data.forEach(element => {
+    //     return {
+    //       timestamp: element.timestamp,
+    //       price: element.price
+    //     };
+    //   });
+
+      
+    // }
     
-    function generateDatas(count) {
-      let data = [];
-      for (var i = 0; i < count; ++i) {
-        data.push(generateData());
-      }
-      return data;
-    }
+    // function generateDatas(count) {
+    //   console.log(count);
+    //   let data = [];
+    //   for (var i = 0; i < count; ++i) {
+    //     data.push(generateData());
+    //   }
+    //   return data;
+    // }
     
     
     // Create axes
@@ -84,8 +107,8 @@ export class DashboardComponent implements OnInit {
       name: "Series",
       xAxis: xAxis,
       yAxis: yAxis,
-      valueYField: "value",
-      valueXField: "date",
+      valueYField: "price",
+      valueXField: "timestamp",
       tooltip: am5.Tooltip.new(root, {
         labelText: "{valueY}"
       })
@@ -100,7 +123,8 @@ export class DashboardComponent implements OnInit {
     
     
     // Set data
-    let data = generateDatas(1200);
+    let data = this.data;
+    console.log(data);
     series.data.setAll(data);
     
     
