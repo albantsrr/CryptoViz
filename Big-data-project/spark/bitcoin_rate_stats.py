@@ -4,7 +4,6 @@ from pyspark.sql.types import DoubleType, TimestampType
 from pyspark.sql import functions as F
 import json
 from datetime import datetime
-# Récupération de l'offset sur la table (bitcoin_latest_stats_offset_treated).
 
 spark = SparkSession.builder \
     .appName("BitcoinRateStats") \
@@ -12,22 +11,23 @@ spark = SparkSession.builder \
     .config("spark.jars.packages", "org.apache.spark:spark-sql-kafka-0-10_2.12:3.1.2,com.datastax.spark:spark-cassandra-connector_2.12:3.4.1") \
     .getOrCreate()
 
-startingOffsets = {
-   "bitcoin_topic": {
-       0: 380000
-   }
-}
+# startingOffsets = {
+#    "bitcoin_topic": {
+#        0: 391426
+#    }
+# }
+#json.dumps(startingOffsets)
 
 df = spark \
     .readStream \
     .format("kafka") \
     .option("kafka.bootstrap.servers", "5.135.156.86:9092") \
     .option("subscribe", "bitcoin_topic") \
-    .option("startingOffsets", json.dumps(startingOffsets)) \
+    .option("startingOffsets", "earliest") \
     .load()
 
 # Sélection des collums souhaitées pour le traitement
-df = df.selectExpr("CAST(key AS STRING)", "CAST(value AS STRING)", "CAST(timestamp AS TIMESTAMP)", "CAST(offset AS INTEGER)")
+df = df.selectExpr("CAST(key AS STRING)", "CAST(value AS STRING)", "CAST(timestamp AS TIMESTAMP)")
 
 # Pré-Traitement des collumns pour utilisation (Conversion de type etc...)
 df = df.withColumn("value", round(df["value"].cast(DoubleType()), 2))
@@ -40,7 +40,7 @@ aggregated_df = df.groupBy("key", F.window("timestamp", "24 hours", "24 hours"))
     F.last("value").alias("latest_value")
 )
 
-aggregated_df = aggregated_df.withColumn("calculation_time", current_timestamp()) 
+aggregated_df = aggregated_df.withColumn("calculation_time", current_timestamp())  
 
 # Calcule du taux de difference du cours du bitcoin sur 24H
 aggregated_df = aggregated_df.withColumn("difference_rate", 
@@ -118,21 +118,6 @@ def process_batch(batch_df, batch_id):
             .options(table="bitcoin_stats_refreshed", keyspace="bitcoin_data") \
             .save()
         
-        ## TODO : PAS FORCEMENT BESOIN POUR L'INSTANT AUTOTRAITEMENT DES ENREGISTREMENT DEJA FAIT A VOIR PLUS TARD
-        
-        #bitcoin_latest_stats_offset_treated = batch_df.select("timestamp","offset")
-        
-        # bitcoin_latest_stats_offset_treated.write \
-        #     .format("org.apache.spark.sql.cassandra") \
-        #     .mode("overwrite") \
-        #     .option("confirm.truncate", True) \
-        #     .option("spark.cassandra.output.batch.size.bytes", "1024") \
-        #     .option("spark.cassandra.output.concurrent.writes", 2) \
-        #     .option("spark.cassandra.connection.host", "5.135.156.86") \
-        #     .option("spark.cassandra.connection.port", "9042") \
-        #     .options(table="bitcoin_latest_stats_offset_treated", keyspace="bitcoin_data") \
-        #     .save()
-
 
 query = result_df.writeStream \
     .outputMode("update") \
