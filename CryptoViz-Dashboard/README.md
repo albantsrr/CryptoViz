@@ -1,6 +1,11 @@
-## Structure
+# T-DAT-901 PROJECT
+## Dashboard client Angular CryptoVizualisation
 
 ```
-Dashboard-angular
-
-Pour lancer ce porojet exécuter la cmd npm install puis ng serve
+Readme à peaufiner & finaliser plus tard avec :
+ 
+ - Information sur l'utilisation et le lancement du serveur client
+ - Détails des technologies frontend utilisées
+ - Objectifs de cette dashboard client
+ - Description des UI/UX
+```
