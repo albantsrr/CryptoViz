@@ -11,6 +11,13 @@ spark = SparkSession.builder \
     .config("spark.jars.packages", "org.apache.spark:spark-sql-kafka-0-10_2.12:3.1.2,com.datastax.spark:spark-cassandra-connector_2.12:3.4.1") \
     .getOrCreate()
 
+# startingOffsets = {
+#    "bitcoin_topic": {
+#        0: 391426
+#    }
+# }
+#json.dumps(startingOffsets)
+
 df = spark \
     .readStream \
     .format("kafka") \
