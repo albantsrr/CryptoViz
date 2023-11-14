@@ -1,0 +1,21 @@
+version: '3'
+
+networks:
+    cassandra-network:
+        driver: bridge
+        ipam:
+            driver: default
+            config:
+                - subnet: "172.18.0.0/16"
+
+services:
+
+  cassandra:
+    image: cassandra:latest
+    container_name: cassandra
+    hostname: cassandra
+    ports:
+      - "9042:9042"
+    networks:
+      cassandra-network:
+        ipv4_address: 172.18.0.6

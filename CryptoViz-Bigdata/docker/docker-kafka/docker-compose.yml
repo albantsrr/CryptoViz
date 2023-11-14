@@ -1,7 +1,7 @@
 version: '3'
 
 networks:
-    datapipeline:
+    kafka-network:
         driver: bridge
         ipam:
             driver: default
@@ -9,23 +9,6 @@ networks:
                 - subnet: "172.18.0.0/16"
 
 services:
-  spark-master:
-    image: bitnami/spark:latest
-    container_name: spark-master
-    hostname: spark-master
-    ports:
-      - "8080:8080"
-      - "7077:7077"
-    environment:
-      - SPARK_MODE=master
-    volumes:
-      - ./spark-app:/app
-    command: /bin/bash -c "/opt/bitnami/spark/bin/spark-class org.apache.spark.deploy.master.Master --ip 0.0.0.0"
-    networks:
-      datapipeline:
-        ipv4_address: 172.18.0.2
-
-
   zookeeper:
     image: confluentinc/cp-zookeeper:latest
     container_name: zookeeper
@@ -35,7 +18,7 @@ services:
     ports:
       - "2181:2181"
     networks:
-      datapipeline:
+      kafka-network:
         ipv4_address: 172.18.0.4
 
   kafka:
@@ -52,15 +35,5 @@ services:
     ports:
       - "9092:9092"
     networks:
-      datapipeline:
+      kafka-network:
         ipv4_address: 172.18.0.5
-
-  cassandra:
-    image: cassandra:latest
-    container_name: cassandra
-    hostname: cassandra
-    ports:
-      - "9042:9042"
-    networks:
-      datapipeline:
-        ipv4_address: 172.18.0.6

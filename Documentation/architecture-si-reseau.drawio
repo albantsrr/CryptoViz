@@ -1,0 +1,95 @@
+<mxfile host="app.diagrams.net" modified="2023-11-08T10:36:09.644Z" agent="Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/119.0" etag="tiW5jx42ynmIhXr8KVL2" version="21.2.1" type="device">
+  <diagram name="Page-1" id="c37626ed-c26b-45fb-9056-f9ebc6bb27b6">
+    <mxGraphModel dx="1434" dy="795" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="hsMjp_QjGmwOjwaJ58GV-10" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="70" y="220" width="200" height="430" as="geometry" />
+        </mxCell>
+        <mxCell id="hsMjp_QjGmwOjwaJ58GV-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="hsMjp_QjGmwOjwaJ58GV-10" source="hsMjp_QjGmwOjwaJ58GV-8">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="320" y="214.99999999999997" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hsMjp_QjGmwOjwaJ58GV-8" value="" style="whiteSpace=wrap;html=1;rounded=0;glass=0;shadow=0;" vertex="1" parent="hsMjp_QjGmwOjwaJ58GV-10">
+          <mxGeometry width="200" height="429.9999999999999" as="geometry" />
+        </mxCell>
+        <mxCell id="hsMjp_QjGmwOjwaJ58GV-2" value="&lt;div&gt;&lt;b&gt;5.135.156.86&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;PORT: 22&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;Ubuntu Server 20.04&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;RAM : 4g&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;CORE : 4&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;Storage: 1 To&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;Protocole: TCP&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;Datacenter : Roubaix&lt;br&gt;&lt;/b&gt;&lt;/div&gt;" style="shape=mxgraph.cisco.servers.software_based_server;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;" vertex="1" parent="hsMjp_QjGmwOjwaJ58GV-10">
+          <mxGeometry x="50" y="13.03" width="110" height="130.3" as="geometry" />
+        </mxCell>
+        <mxCell id="hsMjp_QjGmwOjwaJ58GV-9" value="&lt;div&gt;&lt;b&gt;Service et outils :&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;- Docker &amp;amp; docker-compose&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Python&lt;/div&gt;&lt;div&gt;- Apache cassandra&lt;/div&gt;&lt;div&gt;- Apache kafka&lt;/div&gt;&lt;div&gt;- Web scrapper&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="hsMjp_QjGmwOjwaJ58GV-10">
+          <mxGeometry x="10" y="280.0042751842751" width="180" height="130.30303030303028" as="geometry" />
+        </mxCell>
+        <mxCell id="hsMjp_QjGmwOjwaJ58GV-11" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="390" y="220" width="200" height="430" as="geometry" />
+        </mxCell>
+        <mxCell id="hsMjp_QjGmwOjwaJ58GV-12" value="" style="whiteSpace=wrap;html=1;rounded=0;glass=0;shadow=0;" vertex="1" parent="hsMjp_QjGmwOjwaJ58GV-11">
+          <mxGeometry width="200" height="430" as="geometry" />
+        </mxCell>
+        <mxCell id="hsMjp_QjGmwOjwaJ58GV-13" value="&lt;div&gt;&lt;b&gt;86.201.248.56&lt;/b&gt;&lt;b&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;PORT: 22&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;Ubuntu Server 22.04&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;RAM : 6g&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;CORE : 4&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;Storage: 100 Go&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;Protocole: TCP&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;Datacenter : Toulouse&lt;/b&gt;&lt;/div&gt;" style="shape=mxgraph.cisco.servers.software_based_server;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;" vertex="1" parent="hsMjp_QjGmwOjwaJ58GV-11">
+          <mxGeometry x="50" y="11.21" width="100" height="112.12" as="geometry" />
+        </mxCell>
+        <mxCell id="hsMjp_QjGmwOjwaJ58GV-14" value="&lt;div&gt;&lt;b&gt;Service et outils :&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;- Docker &amp;amp; docker-compose&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Python 3.10&lt;/div&gt;&lt;div&gt;- Java OpenJDK&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Apache spark Master&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="hsMjp_QjGmwOjwaJ58GV-11">
+          <mxGeometry x="10" y="270.0024242424242" width="180" height="112.1212121212121" as="geometry" />
+        </mxCell>
+        <mxCell id="hsMjp_QjGmwOjwaJ58GV-16" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="710" y="10" width="200" height="390" as="geometry" />
+        </mxCell>
+        <mxCell id="hsMjp_QjGmwOjwaJ58GV-17" value="" style="whiteSpace=wrap;html=1;rounded=0;glass=0;shadow=0;" vertex="1" parent="hsMjp_QjGmwOjwaJ58GV-16">
+          <mxGeometry width="200" height="389.9999999999999" as="geometry" />
+        </mxCell>
+        <mxCell id="hsMjp_QjGmwOjwaJ58GV-18" value="&lt;div&gt;&lt;b&gt;86.201.248.56&lt;/b&gt;&lt;b&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;PORT: &lt;/b&gt;&lt;b&gt;5022&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;Ubuntu Server 22.04&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;RAM : 4g&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;CORE : 2&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;Storage: 100 Go&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;Protocole: TCP&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;Datacenter :Toulouse&lt;/b&gt;&lt;/div&gt;" style="shape=mxgraph.cisco.servers.software_based_server;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;" vertex="1" parent="hsMjp_QjGmwOjwaJ58GV-16">
+          <mxGeometry x="50" y="11.82" width="100" height="118.18" as="geometry" />
+        </mxCell>
+        <mxCell id="hsMjp_QjGmwOjwaJ58GV-19" value="&lt;div&gt;&lt;b&gt;Service et outils :&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;- Docker &amp;amp; docker-compose&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Python 3.10&lt;/div&gt;&lt;div&gt;- Java OpenJDK&lt;/div&gt;&lt;div&gt;- Apache spark Worker&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="hsMjp_QjGmwOjwaJ58GV-16">
+          <mxGeometry x="10" y="260.0036363636363" width="180" height="118.18181818181816" as="geometry" />
+        </mxCell>
+        <mxCell id="hsMjp_QjGmwOjwaJ58GV-20" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="710" y="420" width="200" height="390" as="geometry" />
+        </mxCell>
+        <mxCell id="hsMjp_QjGmwOjwaJ58GV-21" value="" style="whiteSpace=wrap;html=1;rounded=0;glass=0;shadow=0;" vertex="1" parent="hsMjp_QjGmwOjwaJ58GV-20">
+          <mxGeometry width="200" height="390" as="geometry" />
+        </mxCell>
+        <mxCell id="hsMjp_QjGmwOjwaJ58GV-22" value="&lt;div&gt;&lt;b&gt;86.201.248.56&lt;/b&gt;&lt;b&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;PORT: &lt;/b&gt;&lt;b&gt;5024&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;Ubuntu Server 22.04&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;RAM : 4g&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;CORE : 2&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;Storage: 100 Go&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;Protocole: TCP&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;Datacenter :Toulouse&lt;/b&gt;&lt;/div&gt;" style="shape=mxgraph.cisco.servers.software_based_server;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;" vertex="1" parent="hsMjp_QjGmwOjwaJ58GV-20">
+          <mxGeometry x="50" y="11.21" width="100" height="112.12" as="geometry" />
+        </mxCell>
+        <mxCell id="hsMjp_QjGmwOjwaJ58GV-23" value="&lt;div&gt;&lt;b&gt;Service et outils :&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;- Docker &amp;amp; docker-compose&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Python 3.10&lt;/div&gt;&lt;div&gt;- Java OpenJDK&lt;/div&gt;&lt;div&gt;- Apache spark Worker&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="hsMjp_QjGmwOjwaJ58GV-20">
+          <mxGeometry x="10" y="260.0024242424242" width="180" height="112.1212121212121" as="geometry" />
+        </mxCell>
+        <mxCell id="hsMjp_QjGmwOjwaJ58GV-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="hsMjp_QjGmwOjwaJ58GV-12" target="hsMjp_QjGmwOjwaJ58GV-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="hsMjp_QjGmwOjwaJ58GV-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="hsMjp_QjGmwOjwaJ58GV-12" target="hsMjp_QjGmwOjwaJ58GV-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="hsMjp_QjGmwOjwaJ58GV-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="hsMjp_QjGmwOjwaJ58GV-12" target="hsMjp_QjGmwOjwaJ58GV-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="hsMjp_QjGmwOjwaJ58GV-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="hsMjp_QjGmwOjwaJ58GV-21" target="hsMjp_QjGmwOjwaJ58GV-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="hsMjp_QjGmwOjwaJ58GV-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="hsMjp_QjGmwOjwaJ58GV-17" target="hsMjp_QjGmwOjwaJ58GV-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="hsMjp_QjGmwOjwaJ58GV-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1" source="hsMjp_QjGmwOjwaJ58GV-17" target="hsMjp_QjGmwOjwaJ58GV-8">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="710" y="150" />
+              <mxPoint x="330" y="150" />
+              <mxPoint x="330" y="328" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hsMjp_QjGmwOjwaJ58GV-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="hsMjp_QjGmwOjwaJ58GV-21" target="hsMjp_QjGmwOjwaJ58GV-8">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="340" y="712" />
+              <mxPoint x="340" y="543" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

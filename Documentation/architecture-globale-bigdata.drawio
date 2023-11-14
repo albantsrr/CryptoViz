@@ -1,0 +1,132 @@
+<mxfile host="app.diagrams.net" modified="2023-11-08T10:36:53.720Z" agent="Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/119.0" etag="ENrshvH3P0l1IH1tIBR-" version="21.2.1" type="device">
+  <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
+    <mxGraphModel dx="1195" dy="1832" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="BGX1E9RIMvS7G2-IjOx7-1" value="&lt;div&gt;&lt;b&gt;Produce&lt;/b&gt; &lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;Time:&lt;/b&gt; 30s&lt;br&gt;&lt;/div&gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="WIyWlLk6GJQsqaUBKTNV-3" target="BGX1E9RIMvS7G2-IjOx7-0">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-3" value="&lt;div&gt;Web Scrapper &lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;Produced data :&lt;/b&gt;&lt;br&gt;Bitcoin_price&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="10" y="135" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="BGX1E9RIMvS7G2-IjOx7-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="BGX1E9RIMvS7G2-IjOx7-0" target="BGX1E9RIMvS7G2-IjOx7-5">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="450" y="175" />
+              <mxPoint x="450" y="340" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BGX1E9RIMvS7G2-IjOx7-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.125;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="BGX1E9RIMvS7G2-IjOx7-0" target="BGX1E9RIMvS7G2-IjOx7-4">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="450" y="175" />
+              <mxPoint x="450" y="340" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BGX1E9RIMvS7G2-IjOx7-0" value="&lt;div&gt;Kafka Broker&lt;/div&gt;&lt;div&gt;&lt;b&gt;Topic :&lt;/b&gt; bitcoin_data&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="270" y="135" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="BGX1E9RIMvS7G2-IjOx7-3" value="&lt;div&gt;&lt;b&gt;Consume data&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;at the defined&amp;nbsp;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt; offset&lt;br&gt;&lt;/b&gt;&lt;/div&gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.25;exitDx=0;exitDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="0.2414" y="50" relative="1" as="geometry">
+            <mxPoint x="660" y="340" as="sourcePoint" />
+            <mxPoint x="390" y="175" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="450" y="340" />
+              <mxPoint x="450" y="175" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BGX1E9RIMvS7G2-IjOx7-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="BGX1E9RIMvS7G2-IjOx7-2" target="BGX1E9RIMvS7G2-IjOx7-5">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="580" y="300" />
+              <mxPoint x="720" y="300" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BGX1E9RIMvS7G2-IjOx7-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="BGX1E9RIMvS7G2-IjOx7-2" target="BGX1E9RIMvS7G2-IjOx7-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BGX1E9RIMvS7G2-IjOx7-17" value="&lt;div&gt;Run spark application on worlers&lt;/div&gt;&lt;div&gt;&amp;nbsp;and dispatch calcul tasks by ressources allowed&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="BGX1E9RIMvS7G2-IjOx7-16">
+          <mxGeometry x="-0.6986" relative="1" as="geometry">
+            <mxPoint x="13" y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BGX1E9RIMvS7G2-IjOx7-2" value="&lt;div&gt;Spark &lt;b&gt;Master&lt;/b&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="520" y="135" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="BGX1E9RIMvS7G2-IjOx7-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="BGX1E9RIMvS7G2-IjOx7-4" target="BGX1E9RIMvS7G2-IjOx7-0">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="390" y="340" />
+              <mxPoint x="450" y="340" />
+              <mxPoint x="450" y="175" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BGX1E9RIMvS7G2-IjOx7-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="BGX1E9RIMvS7G2-IjOx7-4" target="BGX1E9RIMvS7G2-IjOx7-18">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="330" y="460" />
+              <mxPoint x="550" y="460" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BGX1E9RIMvS7G2-IjOx7-21" value="Does the task and store the result" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="BGX1E9RIMvS7G2-IjOx7-19">
+          <mxGeometry x="0.5758" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BGX1E9RIMvS7G2-IjOx7-4" value="&lt;div&gt;Spark &lt;b&gt;Workers&lt;/b&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="270" y="330" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="BGX1E9RIMvS7G2-IjOx7-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="BGX1E9RIMvS7G2-IjOx7-5">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="550" y="520" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="720" y="470" />
+              <mxPoint x="550" y="470" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BGX1E9RIMvS7G2-IjOx7-5" value="&lt;div&gt;Spark &lt;b&gt;Workers&lt;/b&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="660" y="320" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="BGX1E9RIMvS7G2-IjOx7-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="BGX1E9RIMvS7G2-IjOx7-6" target="BGX1E9RIMvS7G2-IjOx7-2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="494" y="80" />
+              <mxPoint x="580" y="80" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BGX1E9RIMvS7G2-IjOx7-6" value="&lt;div&gt;Spark Application&lt;b&gt; bitcoin_price_storage&lt;/b&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="414" y="-50" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="BGX1E9RIMvS7G2-IjOx7-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="BGX1E9RIMvS7G2-IjOx7-7" target="BGX1E9RIMvS7G2-IjOx7-2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="690" y="80" />
+              <mxPoint x="580" y="80" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BGX1E9RIMvS7G2-IjOx7-12" value="Registered to spark cluster" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="BGX1E9RIMvS7G2-IjOx7-11">
+          <mxGeometry x="0.4698" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BGX1E9RIMvS7G2-IjOx7-7" value="&lt;div&gt;Spark Application&lt;b&gt; bitcoin_rate_stats&lt;/b&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="610" y="-50" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="BGX1E9RIMvS7G2-IjOx7-18" value="Cassandra database" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="490" y="520" width="120" height="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
