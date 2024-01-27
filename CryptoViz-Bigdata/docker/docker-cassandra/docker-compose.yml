@@ -6,7 +6,7 @@ networks:
         ipam:
             driver: default
             config:
-                - subnet: "172.18.0.0/16"
+                - subnet: "172.19.0.0/16"
 
 services:
 
@@ -18,4 +18,4 @@ services:
       - "9042:9042"
     networks:
       cassandra-network:
-        ipv4_address: 172.18.0.6
+        ipv4_address: 172.19.0.17
