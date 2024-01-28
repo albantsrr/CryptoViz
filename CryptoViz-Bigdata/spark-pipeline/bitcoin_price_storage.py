@@ -4,7 +4,7 @@ from pyspark.sql.functions import unix_timestamp, round
 from pyspark.sql.types import DoubleType, TimestampType
 import json
 
-cluster = Cluster(['localhost'], port=9042) 
+cluster = Cluster(['172.19.0.17'], port=9042) 
 session = cluster.connect()
 
 session.set_keyspace('bitcoin_data') 
@@ -18,7 +18,7 @@ cluster.shutdown()
 
 spark = SparkSession.builder \
     .appName("BitcoinPriceStorage") \
-    .master("spark://0.0.0.0:7077") \
+    .master("spark://83.159.114.67:7077") \
     .config("spark.jars.packages", "org.apache.spark:spark-sql-kafka-0-10_2.12:3.1.2,com.datastax.spark:spark-cassandra-connector_2.12:3.4.1") \
     .config("spark.network.timeout", "240000") \
     .getOrCreate()
@@ -36,6 +36,7 @@ df = spark \
     .option("subscribe", "bitcoin_topic") \
     .option("startingOffsets", json.dumps(startingOffsets)) \
     .option("groupId", "store_bitcoin_data") \
+    .option("failOnDataLoss", "false") \
     .load()
 
 df = df.selectExpr("CAST(key AS STRING)", "CAST(offset AS INTEGER)", "CAST(value AS STRING)", "CAST(timestamp AS TIMESTAMP)")
@@ -54,7 +55,7 @@ def process_batch(batch_df, batch_id):
         .option("confirm.truncate", True) \
         .option("spark.cassandra.output.batch.size.bytes", "1024") \
         .option("spark.cassandra.output.concurrent.writes", 2) \
-        .option("spark.cassandra.connection.host", "localhost") \
+        .option("spark.cassandra.connection.host", "172.19.0.17") \
         .option("spark.cassandra.connection.port", "9042") \
         .options(table="bitcoin_prices", keyspace="bitcoin_data") \
         .save()
@@ -65,7 +66,7 @@ def process_batch(batch_df, batch_id):
         .option("confirm.truncate", True) \
         .option("spark.cassandra.output.batch.size.bytes", "1024") \
         .option("spark.cassandra.output.concurrent.writes", 2) \
-        .option("spark.cassandra.connection.host", "localhost") \
+        .option("spark.cassandra.connection.host", "172.19.0.17") \
         .option("spark.cassandra.connection.port", "9042") \
         .options(table="bitcoin_latest_offset_treated", keyspace="bitcoin_data") \
         .save()
