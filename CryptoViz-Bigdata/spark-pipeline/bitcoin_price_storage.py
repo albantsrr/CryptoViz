@@ -4,7 +4,7 @@ from pyspark.sql.functions import unix_timestamp, round
 from pyspark.sql.types import DoubleType, TimestampType
 import json
 
-cluster = Cluster(['172.19.0.17'], port=9042) 
+cluster = Cluster(['83.159.114.67'], port=9042) 
 session = cluster.connect()
 
 session.set_keyspace('bitcoin_data') 
@@ -58,7 +58,7 @@ def process_batch(batch_df, batch_id):
         .option("confirm.truncate", True) \
         .option("spark.cassandra.output.batch.size.bytes", "1024") \
         .option("spark.cassandra.output.concurrent.writes", 2) \
-        .option("spark.cassandra.connection.host", "172.19.0.17") \
+        .option("spark.cassandra.connection.host", "83.159.114.67") \
         .option("spark.cassandra.connection.port", "9042") \
         .options(table="bitcoin_prices", keyspace="bitcoin_data") \
         .save()
@@ -69,7 +69,7 @@ def process_batch(batch_df, batch_id):
         .option("confirm.truncate", True) \
         .option("spark.cassandra.output.batch.size.bytes", "1024") \
         .option("spark.cassandra.output.concurrent.writes", 2) \
-        .option("spark.cassandra.connection.host", "172.19.0.17") \
+        .option("spark.cassandra.connection.host", "83.159.114.67") \
         .option("spark.cassandra.connection.port", "9042") \
         .options(table="bitcoin_latest_offset_treated", keyspace="bitcoin_data") \
         .save()

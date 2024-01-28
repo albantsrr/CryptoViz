@@ -7,7 +7,7 @@ from datetime import datetime
 
 spark = SparkSession.builder \
     .appName("BitcoinRateStats") \
-    .master("spark://0.0.0.0:7077") \
+    .master("spark://83.159.114.67:7077") \
     .config("spark.jars.packages", "org.apache.spark:spark-sql-kafka-0-10_2.12:3.1.2,com.datastax.spark:spark-cassandra-connector_2.12:3.4.1") \
     .getOrCreate()
 
@@ -88,7 +88,7 @@ def process_batch_zero(batch_df):
         .option("confirm.truncate", True) \
         .option("spark.cassandra.output.batch.size.bytes", "1024") \
         .option("spark.cassandra.output.concurrent.writes", 2) \
-        .option("spark.cassandra.connection.host", "5.135.156.86") \
+        .option("spark.cassandra.connection.host", "83.159.114.67") \
         .option("spark.cassandra.connection.port", "9042") \
         .options(table="bitcoin_stats_history", keyspace="bitcoin_data") \
         .save()
@@ -113,7 +113,7 @@ def process_batch(batch_df, batch_id):
             .option("confirm.truncate", True) \
             .option("spark.cassandra.output.batch.size.bytes", "1024") \
             .option("spark.cassandra.output.concurrent.writes", 2) \
-            .option("spark.cassandra.connection.host", "5.135.156.86") \
+            .option("spark.cassandra.connection.host", "83.159.114.67") \
             .option("spark.cassandra.connection.port", "9042") \
             .options(table="bitcoin_stats_refreshed", keyspace="bitcoin_data") \
             .save()
