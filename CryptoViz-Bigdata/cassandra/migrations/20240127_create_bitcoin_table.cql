@@ -4,10 +4,11 @@ WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 1};
 
 USE bitcoin_data;
 
-CREATE TABLE IF NOT EXISTS bitcoin_prices (
-	id UUID PRIMARY KEY,
-	price DECIMAL, 
-	timestamp TIMESTAMP 
-); 
+CREATE TABLE bitcoin_data.bitcoin_prices (
+    timestamp TIMESTAMP,
+    price DOUBLE,
+    PRIMARY KEY (timestamp)
+);
+
 
 
