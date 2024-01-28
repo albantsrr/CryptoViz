@@ -39,11 +39,14 @@ df = spark \
     .option("failOnDataLoss", "false") \
     .load()
 
+
 df = df.selectExpr("CAST(key AS STRING)", "CAST(offset AS INTEGER)", "CAST(value AS STRING)", "CAST(timestamp AS TIMESTAMP)")
 
 df = df.withColumn("price", round(df["value"].cast(DoubleType()), 2))
 df = df.withColumn("timestamp", df["timestamp"].cast(TimestampType()))
 df = df.withColumn("timestamp", unix_timestamp(df["timestamp"], "yyyy-MM-dd HH:mm:ss.SSS").cast("timestamp"))
+
+print(df); 
 
 def process_batch(batch_df, batch_id):
     selected_df_for_bitcoin_prices = batch_df.select("timestamp", "price")
