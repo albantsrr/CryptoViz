@@ -10,7 +10,7 @@ spark = SparkSession.builder \
 
 df = spark.readStream \
     .format("kafka") \
-    .option("kafka.bootstrap.servers", "your-kafka-server:9092") \
+    .option("kafka.bootstrap.servers", "5.135.156.86:9092") \
     .option("subscribe", "bitcoin_topic") \
     .load()
 
@@ -18,16 +18,24 @@ df = df.selectExpr("CAST(value AS STRING)", "CAST(timestamp AS TIMESTAMP)")
 
 df = df.withColumn("value", col("value").cast(DoubleType()))
 
-# Calcul de l'écart-type sur une fenêtre de temps (par exemple, 1 heure)
+# Calcul de l'écart-type sur 1 heure
 volatility = df.withWatermark("timestamp", "5 minutes") \
     .groupBy(window(col("timestamp"), "1 hour")) \
     .agg(stddev("value").alias("price_volatility"))
+
+volatility = volatility.select(
+    col("window.start").alias("window_start"),
+    col("window.end").alias("window_end"),
+    col("price_volatility")
+)
 
 # Écriture dans Cassandra
 def writeToCassandra(batch_df, epoch_id):
     batch_df.write \
         .format("org.apache.spark.sql.cassandra") \
         .mode("append") \
+	.option("spark.cassandra.connection.host", "83.159.114.67") \
+        .option("spark.cassandra.connection.port", "9042") \
         .option("keyspace", "bitcoin_data") \
         .option("table", "bitcoin_volatility") \
         .save()
