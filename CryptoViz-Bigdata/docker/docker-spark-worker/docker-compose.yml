@@ -13,13 +13,13 @@ services:
       - ./spark-worker:/app
     command: /bin/bash -c "/opt/bitnami/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://83.159.114.67:7077"
   
-#  spark-worker-2:
- #   image: bitnami/spark:latest
- #   container_name: spark-worker-phantom-2
- #   hostname: spark-worker-phantom-2
- #   environment:
- #     - SPARK_MODE=worker
- #     - SPARK_MASTER_URL=83.159.114.67:7077
- #   volumes:
- #     - ./spark-worker:/app
- #   command: /bin/bash -c "/opt/bitnami/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://83.159.114.67:7077"
+ # spark-worker-2:
+  #  image: bitnami/spark:latest
+   # container_name: spark-worker-phantom-2
+   # hostname: spark-worker-phantom-2
+   # environment:
+     # - SPARK_MODE=worker
+     # - SPARK_MASTER_URL=83.159.114.67:7077
+   # volumes:
+     # - ./spark-worker:/app
+   # command: /bin/bash -c "/opt/bitnami/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://83.159.114.67:7077"
