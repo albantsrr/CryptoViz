@@ -1,0 +1,16 @@
+FROM bitnami/spark:latest
+
+# Passer en utilisateur root pour effectuer des modifications
+USER root
+
+# Installer nano et mettre à jour les permissions
+RUN apt-get update && apt-get install -y nano && \
+    chmod -R 777 /opt/bitnami/spark && \
+    chown -R 1001:1001 /opt/bitnami/spark
+
+# Revenir à l'utilisateur non root
+USER 1001
+FROM bitnami/spark:latest
+USER root
+RUN apt-get update && apt-get install -y nano
+USER 1001
